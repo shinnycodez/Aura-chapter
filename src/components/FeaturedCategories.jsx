@@ -36,7 +36,7 @@ const categories = [
         {
     id: 5,
     title: "Presson nails 𝜗ৎ",
-    imageUrl:"https://i.postimg.cc/ZYd98r48/image.png",
+    imageUrl:"https://pbs.twimg.com/media/G1TOH2OWwAAoY6v?format=jpg&name=small",
      link: "Presson nails"
   },
   {
