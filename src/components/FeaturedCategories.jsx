@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 const categories = [
     {
     id: 1,
-    title: "Bracelets ˚⊹♡",
-    imageUrl: "https://i.postimg.cc/wx0XrXnS/image.png",
+    title: "Bracelets ⋆౨ৎ˚⟡",
+    imageUrl: "https://pbs.twimg.com/media/G1TNITFXIAAKjyZ?format=jpg&name=small",
     link: "Bracelets"
   },
   {
     id: 2,
-    title: "Pendants ⋆｡𖦹°",
-    imageUrl: "https://i.postimg.cc/CLRq6WGq/image.png",
-      link: "Pendants",
+    title: "Necklaces ✧˖°.",
+    imageUrl: "https://pbs.twimg.com/media/G1TNOG8WQAAwQO3?format=jpg&name=small",
+      link: "Necklaces",
   },
 
 
@@ -23,52 +23,52 @@ const categories = [
   // },
       {
     id: 3,
-    title: "Earrings ˚⋆𐙚｡",
-    imageUrl: "https://pbs.twimg.com/media/G1SoQphW8AAN_8l?format=png&name=small",
+    title: "Earrings ⋆˚꩜｡",
+    imageUrl: "https://pbs.twimg.com/media/G1TNUbcXwAAcikk?format=jpg&name=small",
       link: "Earrings"
   },
       {
     id: 4,
-    title: "Resin jhumkas ｡°✩",
-    imageUrl:"https://pbs.twimg.com/media/G1Sn5keXEAAWjmD?format=png&name=small",
-     link: "Resin jhumkas"
+    title: "Phone charms ｡°✩",
+    imageUrl:"https://pbs.twimg.com/media/G1TNROYWUAAX94f?format=jpg&name=small",
+     link: "Phone charms"
   },
         {
     id: 5,
-    title: "Vintage Collection⋆⭒˚.⋆",
+    title: "Presson nails 𝜗ৎ",
     imageUrl:"https://i.postimg.cc/ZYd98r48/image.png",
-     link: "Vintage Collection"
+     link: "Presson nails"
   },
   {
       id: 6,
-    title: "Gifts ⋆⭒˚.⋆",
-    imageUrl:"https://i.postimg.cc/cH8JcSyx/image.png",
-     link: "Gifts"
+    title: "Other ⋆˚࿔",
+    imageUrl:"https://pbs.twimg.com/media/G1TOJfCWwAEafV7?format=jpg&name=small",
+     link: "Other"
   },
     {
       id: 7,
-    title: "Flower preservation⋆⭒˚.⋆",
-    imageUrl:"https://i.postimg.cc/HLrWpgLw/image.png",
-     link: "Flower preservation"
+    title: "Cuffs ✮ ⋆ ˚｡",
+    imageUrl:"https://pbs.twimg.com/media/G1TOKwYWEAAnoBZ?format=jpg&name=small",
+     link: "Cuffs"
   },
       {
       id: 7,
-    title: "Rings⋆⭒˚.⋆",
-    imageUrl:"https://pbs.twimg.com/media/G1Sn4YIWcAAnzup?format=png&name=small",
+    title: "Rings  🌷⋆｡‧˚ ",
+    imageUrl:"https://pbs.twimg.com/media/G1TOPhWX0AAhISG?format=jpg&name=small",
      link: "Rings"
   },
-      {
-      id: 7,
-    title: "3 piece sets⭒˚.⋆",
-    imageUrl:"https://i.postimg.cc/9Q4s0FGQ/image.png",
-     link: "3 piece sets"
-  },
-        {
-      id: 7,
-    title: "Charms⭒˚.⋆",
-    imageUrl:"https://i.postimg.cc/pXS1wbgb/image.png",
-     link: "charms"
-  },
+  //     {
+  //     id: 7,
+  //   title: "3 piece sets⭒˚.⋆",
+  //   imageUrl:"https://i.postimg.cc/9Q4s0FGQ/image.png",
+  //    link: "3 piece sets"
+  // },
+  //       {
+  //     id: 7,
+  //   title: "Charms⭒˚.⋆",
+  //   imageUrl:"https://i.postimg.cc/pXS1wbgb/image.png",
+  //    link: "charms"
+  // },
   //       {
   //   id: 6,
   //   title: "Bag charms",

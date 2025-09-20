@@ -33,8 +33,8 @@ const ContactForm = () => {
 
   return (
     <div className="max-w-full mx-auto mt-10 bg-[#
-#fefaf9] p-8 rounded-2xl shadow-lg border border-pink-300">
-      <h2 className="text-2xl font-bold text-pink-700 mb-4 text-center">🌸 Leave a comment</h2>
+#fefaf9] p-8 rounded-2xl shadow-lg border border-[#B6CEB4]">
+      <h2 className="text-2xl font-bold text-white mb-4 text-center"> Leave a comment</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           type="text"
@@ -42,7 +42,7 @@ const ContactForm = () => {
           placeholder="Your name"
           value={form.name}
           onChange={handleChange}
-          className="w-full p-3 rounded-lg border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className="w-full p-3 rounded-lg border border-[#B6CEB4] focus:outline-none focus:ring-2 focus:ring-pink-400"
         />
         <input
           type="email"
@@ -50,7 +50,7 @@ const ContactForm = () => {
           placeholder="Your email"
           value={form.email}
           onChange={handleChange}
-          className="w-full p-3 rounded-lg border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className="w-full p-3 rounded-lg border border-[#B6CEB4] focus:outline-none focus:ring-2 focus:ring-pink-400"
         />
         <textarea
           name="message"
@@ -58,11 +58,11 @@ const ContactForm = () => {
           rows="4"
           value={form.message}
           onChange={handleChange}
-          className="w-full p-3 rounded-lg border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          className="w-full p-3 rounded-lg border border-[#B6CEB4] focus:outline-none focus:ring-2 focus:ring-pink-400"
         />
         <button
           type="submit"
-          className="w-full bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+          className="w-full bg-[#B6CEB4] hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
         >
           ✨ Send
         </button>
