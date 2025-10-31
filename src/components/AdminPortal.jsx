@@ -10,11 +10,13 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase";
 import Header from "./Header";
+import { uploadToCloudinary } from "../cloudinary";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 function AdminPortal() {
   const [salesByMonth, setSalesByMonth] = useState([]);
   const [productSales, setProductSales] = useState([]);
+  const [uploading, setUploading] = useState(false);
   const [totalSales, setTotalSales] = useState({ day: 0, month: 0, year: 0 });
 
 const [formData, setFormData] = useState({
@@ -186,7 +188,41 @@ const [formData, setFormData] = useState({
         : prev.productIds.filter(id => id !== productId),
     }));
   };
+const handleFileChange = async (e) => {
+  const { name, files } = e.target;
+  const file = files[0];
+  
+  // If no file selected during edit, keep the existing image
+  if (!file) {
+    if (editId) {
+      return; // Keep the existing image when editing
+    } else {
+      // For new products, clear the field if no file selected
+      setFormData(prev => ({
+        ...prev,
+        [name]: ""
+      }));
+      return;
+    }
+  }
 
+  setUploading(true);
+  try {
+    const imageUrl = await uploadToCloudinary(file);
+    
+    setFormData(prev => ({
+      ...prev,
+      [name]: imageUrl
+    }));
+    
+    setSuccessMsg(`✅ ${name} uploaded successfully!`);
+  } catch (error) {
+    console.error(`Error uploading ${name}:`, error);
+    setSuccessMsg(`❌ Failed to upload ${name}`);
+  } finally {
+    setUploading(false);
+  }
+};
   // New function to handle discount submission
   const handleDiscountSubmit = async (e) => {
     e.preventDefault();
@@ -460,7 +496,7 @@ const OrderDetails = ({ order }) => (
   <div className="mt-4 space-y-3 text-sm text-gray-700 p-2 border-t border-gray-200 pt-3">
     <p><strong>Status:</strong> <span className={`font-semibold ${order.status === 'delivered' ? 'text-green-600' : 'text-orange-600'}`}>{order.status.charAt(0).toUpperCase() + order.status.slice(1)}</span></p>
     <p><strong>Payment Method:</strong> {order.payment}</p>
-    {order.payment === 'EasyPaisa' && order.bankTransferProofBase64 && (
+    {order.payment === 'Jazzcash' && order.bankTransferProofBase64 && (
       <div className="mt-2">
         <strong>Bank Transfer Proof:</strong>
         <div
@@ -565,10 +601,111 @@ const OrderDetails = ({ order }) => (
               <input name="price" placeholder="Price (PKR)" type="number" step="0.01" className="w-full border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base" value={formData.price} onChange={handleChange} required />
               <input name="category" placeholder="Category (e.g., 'Formal', 'Casual')" className="w-full border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base" value={formData.category} onChange={handleChange} required />
               <textarea name="description" placeholder="Product Description" rows="4" className="w-full border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base" value={formData.description} onChange={handleChange} required />
-              <input name="coverImage" placeholder="Cover Image URL (e.g., Firebase Storage URL)" className="w-full border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base" value={formData.coverImage} onChange={handleChange} required />
-              <input name="image1" placeholder="Image 1 URL (Optional)" className="w-full border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base" value={formData.image1} onChange={handleChange} />
-              <input name="image2" placeholder="Image 2 URL (Optional)" className="w-full border border-gray-300 p-2 rounded-md focus:ring-blue-500 focus:border-blue-500 text-sm sm:text-base" value={formData.image2} onChange={handleChange} />
+             {/* Cover Image Upload */}
+{/* Cover Image Upload */}
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Cover Image {!editId && "*"}
+  </label>
+  {formData.coverImage && (
+    <div className="mb-2">
+      <p className="text-sm text-gray-600 mb-1">
+        {editId ? "Current Image (upload new to replace)" : "Uploaded Image"}
+      </p>
+      <img 
+        src={formData.coverImage} 
+        alt="Cover preview" 
+        className="h-20 w-20 object-cover rounded border"
+      />
+    </div>
+  )}
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleFileChange}
+    name="coverImage"
+    className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+    disabled={uploading}
+    required={!editId} // Only required for new products
+  />
+  {editId && (
+    <p className="text-xs text-gray-500 mt-1">
+      Optional: Upload new image to replace current one
+    </p>
+  )}
+</div>
 
+{/* Image 1 Upload */}
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Image 1 {!editId && "(Optional)"}
+  </label>
+  {formData.image1 && (
+    <div className="mb-2">
+      <p className="text-sm text-gray-600 mb-1">
+        {editId ? "Current Image (upload new to replace)" : "Uploaded Image"}
+      </p>
+      <img 
+        src={formData.image1} 
+        alt="Image 1 preview" 
+        className="h-20 w-20 object-cover rounded border"
+      />
+    </div>
+  )}
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleFileChange}
+    name="image1"
+    className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+    disabled={uploading}
+  />
+  {editId && formData.image1 && (
+    <button
+      type="button"
+      onClick={() => setFormData(prev => ({ ...prev, image1: "" }))}
+      className="text-xs text-red-600 hover:text-red-800 mt-1"
+    >
+      Remove Image 1
+    </button>
+  )}
+</div>
+
+{/* Image 2 Upload */}
+<div>
+  <label className="block text-sm font-medium text-gray-700 mb-2">
+    Image 2 {!editId && "(Optional)"}
+  </label>
+  {formData.image2 && (
+    <div className="mb-2">
+      <p className="text-sm text-gray-600 mb-1">
+        {editId ? "Current Image (upload new to replace)" : "Uploaded Image"}
+      </p>
+      <img 
+        src={formData.image2} 
+        alt="Image 2 preview" 
+        className="h-20 w-20 object-cover rounded border"
+      />
+    </div>
+  )}
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleFileChange}
+    name="image2"
+    className="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
+    disabled={uploading}
+  />
+  {editId && formData.image2 && (
+    <button
+      type="button"
+      onClick={() => setFormData(prev => ({ ...prev, image2: "" }))}
+      className="text-xs text-red-600 hover:text-red-800 mt-1"
+    >
+      Remove Image 2
+    </button>
+  )}
+</div>
               {/* Color Variations Input */}
               <div>
                 <label className="block text-sm sm:text-base font-medium text-gray-700 mb-1">Color Variations (e.g., Red, Blue)</label>
@@ -686,13 +823,13 @@ const OrderDetails = ({ order }) => (
                 </label>
               </div>
 
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-md transition-colors duration-200 text-base sm:text-lg font-medium disabled:bg-blue-400 disabled:cursor-not-allowed"
-              >
-                {loading ? (editId ? "Updating..." : "Adding...") : (editId ? "Update Product" : "Add Product")}
-              </button>
+<button
+  type="submit"
+  disabled={loading || uploading}
+  className="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-md transition-colors duration-200 text-base sm:text-lg font-medium disabled:bg-blue-400 disabled:cursor-not-allowed"
+>
+  {loading || uploading ? "Processing..." : (editId ? "Update Product" : "Add Product")}
+</button>
             </form>
           )}
         </div>

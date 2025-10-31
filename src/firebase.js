@@ -7,13 +7,13 @@ import { getStorage } from 'firebase/storage';
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA3uaC0cweBC6casyDnkgH0vZd01IknAAQ",
-  authDomain: "jemzi-6adda.firebaseapp.com",
-  projectId: "jemzi-6adda",
-  storageBucket: "jemzi-6adda.firebasestorage.app",
-  messagingSenderId: "838522991952",
-  appId: "1:838522991952:web:05ab4ab0b8217cb9c5e855",
-  measurementId: "G-4NDDR09DG7"
+  apiKey: "AIzaSyBqSd9QXRhz7CBIctDNWPdmA-Kc7XKdP3s",
+  authDomain: "aura-chapter.firebaseapp.com",
+  projectId: "aura-chapter",
+  storageBucket: "aura-chapter.firebasestorage.app",
+  messagingSenderId: "316809177145",
+  appId: "1:316809177145:web:1dfd0282b89703cb2b85e8",
+  measurementId: "G-DESE7YD2WQ"
 };
 
 const app = initializeApp(firebaseConfig);

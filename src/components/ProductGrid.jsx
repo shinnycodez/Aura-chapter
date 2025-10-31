@@ -127,7 +127,7 @@ function ProductGrid({ filters = {} }) {
                       PKR {product.price}
                     </p>
                   </div>
-                  <button className="mt-auto py-2 px-1 rounded-full bg-[#B6CEB4] text-white text-sm font-semibold shadow-md hover:bg-gray-900 transition-all duration-200">
+                  <button className="mt-auto py-2 px-1 rounded-full bg-[#ea9594] text-white text-sm font-semibold shadow-md hover:bg-gray-900 transition-all duration-200">
                     Buy Now
                   </button>
                 </div>

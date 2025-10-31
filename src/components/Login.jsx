@@ -5,7 +5,7 @@ import LoginForm from "./LoginForm";
 function Login() {
   return (
     <div
-      className="min-h-screen flex flex-col bg-[#96A78D] overflow-x-hidden"
+      className="min-h-screen flex flex-col bg-[#ffb1b1] overflow-x-hidden"
       style={{ fontFamily: 'Lexend, "Noto Sans", sans-serif' }}
     >
       <Header />

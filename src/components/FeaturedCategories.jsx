@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 const categories = [
     {
     id: 1,
-    title: "Bracelets ⋆౨ৎ˚⟡",
-    imageUrl: "https://pbs.twimg.com/media/G1TNITFXIAAKjyZ?format=jpg&name=small",
-    link: "Bracelets"
+    title: "Mini rhinestone clutches ⋆౨ৎ˚⟡",
+    imageUrl: "https://i.pinimg.com/736x/92/42/1c/92421caacff82c3fae4504be9d388c18.jpg",
+    link: "Mini rhinestone clutches"
   },
   {
     id: 2,
-    title: "Necklaces ✧˖°.",
-    imageUrl: "https://pbs.twimg.com/media/G1TNOG8WQAAwQO3?format=jpg&name=small",
-      link: "Necklaces",
+    title: "Mini canvases ✧˖°.",
+    imageUrl: "https://i.pinimg.com/1200x/bf/08/0b/bf080b592dd90fd3d70007a6c9405e0b.jpg",
+      link: "Mini canvases",
   },
 
 
@@ -23,57 +23,35 @@ const categories = [
   // },
       {
     id: 3,
-    title: "Earrings ⋆˚꩜｡",
-    imageUrl: "https://pbs.twimg.com/media/G1TNUbcXwAAcikk?format=jpg&name=small",
-      link: "Earrings"
+    title: "Resin coasters ⋆˚꩜｡",
+    imageUrl: "https://i.pinimg.com/736x/7b/fb/95/7bfb95cd20cc9bfbaa8a6e03ae0f4e4f.jpg",
+      link: "Resin coasters"
   },
       {
     id: 4,
-    title: "Phone charms ｡°✩",
-    imageUrl:"https://pbs.twimg.com/media/G1TNROYWUAAX94f?format=jpg&name=small",
-     link: "Phone charms"
+    title: "Resin pencil holder ｡°✩",
+    imageUrl:"https://i.pinimg.com/736x/1b/69/6f/1b696f568acb8681e33ae35b8546b92e.jpg",
+     link: "Resin pencil holder"
   },
+ 
         {
     id: 5,
-    title: "Presson nails 𝜗ৎ",
-    imageUrl:"https://pbs.twimg.com/media/G1TOH2OWwAAoY6v?format=jpg&name=small",
-     link: "Presson nails"
+    title: "Resin jar 𝜗ৎ",
+    imageUrl:"https://i.pinimg.com/736x/a5/06/06/a5060670bedbe08a9b73da153fc87905.jpg",
+     link: "Resin jar"
   },
-  {
-      id: 6,
-    title: "Other ⋆˚࿔",
-    imageUrl:"https://pbs.twimg.com/media/G1TOJfCWwAEafV7?format=jpg&name=small",
-     link: "Other"
+          {
+    id: 5,
+    title: "Resin keychains 𝜗ৎ",
+    imageUrl:"https://i.pinimg.com/736x/2b/56/74/2b5674e792911ecf9de9a5c1961fa766.jpg",
+     link: "Resin keychains"
   },
-    {
-      id: 7,
-    title: "Cuffs ✮ ⋆ ˚｡",
-    imageUrl:"https://pbs.twimg.com/media/G1TOKwYWEAAnoBZ?format=jpg&name=small",
-     link: "Cuffs"
+            {
+    id: 5,
+    title: "Resin bookmarks 𝜗ৎ",
+    imageUrl:"https://i.pinimg.com/736x/b5/d3/02/b5d3022fb758b1afe9a28a21f60a580b.jpg",
+     link: "Resin bookmarks"
   },
-      {
-      id: 7,
-    title: "Rings  🌷⋆｡‧˚ ",
-    imageUrl:"https://pbs.twimg.com/media/G1TOPhWX0AAhISG?format=jpg&name=small",
-     link: "Rings"
-  },
-  //     {
-  //     id: 7,
-  //   title: "3 piece sets⭒˚.⋆",
-  //   imageUrl:"https://i.postimg.cc/9Q4s0FGQ/image.png",
-  //    link: "3 piece sets"
-  // },
-  //       {
-  //     id: 7,
-  //   title: "Charms⭒˚.⋆",
-  //   imageUrl:"https://i.postimg.cc/pXS1wbgb/image.png",
-  //    link: "charms"
-  // },
-  //       {
-  //   id: 6,
-  //   title: "Bag charms",
-  //   imageUrl: "https://scontent.flhe3-2.fna.fbcdn.net/v/t1.15752-9/520244288_1267810474939004_9048492148598199566_n.png?stp=dst-png_s640x640&_nc_cat=106&ccb=1-7&_nc_sid=0024fc&_nc_ohc=neIk5TZGFm4Q7kNvwEuXfQ_&_nc_oc=AdmxJ4KDwZ-uqPdqouvocGIJ_PMCJuOMaF7ERpOXqSlLAudbRPv9J7oqkY8r3siKLZI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.flhe3-2.fna&oh=03_Q7cD2wFMPcWh2mt2rXhc_FNIMeleWIzjCbZQawAV-wDep1F7MQ&oe=68A70F62"
-  // },
 
 ];
 
